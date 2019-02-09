@@ -110,7 +110,7 @@ class GpsFileReplayer:
                     hbDatum.write(json.loads(json.dumps(datum)), encoder)
                     hbBuf = bytesWriter.getvalue()
                     self.producer.send(\
-                            self.topic, key='hb:' + ibIdDict[filename], \
+                            'debug', key='hb:' + ibIdDict[filename], \
                             value=hbBuf)
 
                     print filename, json.loads(json.dumps(datum))
